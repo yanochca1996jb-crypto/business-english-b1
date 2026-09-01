@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Lesson 1 · Presentations — Business English B1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --ink:#3A372F;
+    --forest:#3E7A6C;
+    --forest-light:#5B9686;
+    --mustard:#E8B85C;
+    --mustard-dark:#C99B3F;
+    --sand:#FDFBF7;
+    --sage:#EAF1EB;
+    --sage-line:#CDDCD0;
+    --white:#FFFFFF;
+    --red:#C1604A;
+  }
+
+  html{background:#FDFBF7;color-scheme:light;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    color:var(--forest);
+    margin:0 0 .4em 0;
+    font-weight:600;
+    line-height:1.15;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 80px;}
+
+  /* progress bar */
+  .progress-shell{
+    position:sticky;top:0;z-index:50;
+    background:var(--sand);
+    padding:14px 20px 10px;
+    border-bottom:1px solid var(--sage-line);
+  }
+  .progress-track{
+    max-width:720px;margin:0 auto;
+    height:6px;background:var(--sage);border-radius:4px;overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;background:var(--mustard);width:0%;
+    transition:width .5s ease;
+  }
+  .progress-label{
+    max-width:720px;margin:0 auto;
+    font-size:12px;color:var(--forest-light);margin-top:6px;font-weight:600;
+    letter-spacing:.02em;
+  }
+
+  /* hero */
+  .hero{padding:38px 0 8px;}
+  .hero .tag{
+    color:var(--mustard-dark);font-weight:600;font-size:13px;
+    margin-bottom:10px;display:block;
+  }
+  .hero h1{font-size:clamp(30px,7vw,42px);max-width:11ch;}
+  .hero p{font-size:16px;color:#4a4740;max-width:46ch;margin-top:10px;}
+  .meta-row{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;}
+  .meta-chip{
+    background:var(--white);border:1px solid var(--sage-line);
+    border-radius:8px;padding:8px 14px;font-size:13px;color:var(--forest);
+    font-weight:500;
+  }
+
+  section{margin-top:52px;}
+  .section-head{margin-bottom:18px;}
+  .section-head .kicker{
+    font-size:13px;color:var(--mustard-dark);font-weight:700;margin-bottom:4px;
+  }
+  .section-head h2{font-size:24px;}
+  .section-head p{color:#4a4740;font-size:15px;margin-top:6px;}
+
+  /* speaking badge */
+  .speak-badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--sage);color:var(--forest);border:1px solid var(--sage-line);
+    font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;
+    margin-bottom:10px;
+  }
+
+  /* discussion cards */
+  .qlist{display:flex;flex-direction:column;gap:10px;}
+  .qcard{
+    background:var(--white);border:1px solid var(--sage-line);
+    border-radius:10px;padding:16px 18px;font-size:15px;
+    display:flex;gap:12px;align-items:flex-start;cursor:pointer;
+    transition:border-color .15s ease;
+  }
+  .qcard:active{border-color:var(--mustard);}
+  .qnum{
+    font-family:'Fraunces',serif;color:var(--mustard-dark);font-weight:700;
+    font-size:16px;flex-shrink:0;
+  }
+  .qcard.done{opacity:.5;text-decoration:line-through;}
+
+  /* timer widget */
+  .timer-box{
+    background:var(--sage);border:1px solid var(--sage-line);color:var(--forest);border-radius:14px;
+    padding:22px;text-align:center;margin-top:16px;
+  }
+  .timer-box .time{
+    font-family:'Fraunces',serif;font-size:52px;font-weight:600;
+    font-variant-numeric:tabular-nums;color:var(--forest);
+  }
+  .timer-box .sub{font-size:13px;opacity:.75;margin-top:2px;color:var(--forest);}
+  .timer-controls{display:flex;gap:10px;justify-content:center;margin-top:14px;}
+  .btn{
+    border:none;border-radius:8px;padding:10px 18px;font-size:14px;font-weight:600;
+    cursor:pointer;font-family:'Inter',sans-serif;
+  }
+  .btn-mustard{background:var(--mustard);color:var(--ink);}
+  .btn-mustard:active{background:var(--mustard-dark);}
+  .btn-ghost{background:var(--white);color:var(--forest);border:1px solid var(--sage-line);}
+  .btn-outline{background:transparent;border:1.5px solid var(--forest);color:var(--forest);}
+
+  /* vocab flip cards */
+  .vocab-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  }
+  @media(max-width:480px){.vocab-grid{grid-template-columns:1fr;}}
+  .flip{
+    perspective:1000px;height:120px;cursor:pointer;
+  }
+  .flip-inner{
+    position:relative;width:100%;height:100%;
+    transition:transform .5s;transform-style:preserve-3d;
+  }
+  .flip.on .flip-inner{transform:rotateY(180deg);}
+  .flip-face{
+    position:absolute;inset:0;backface-visibility:hidden;
+    border-radius:10px;padding:14px;display:flex;flex-direction:column;justify-content:center;
+  }
+  .flip-front{background:var(--sage);border:1px solid var(--sage-line);}
+  .flip-front .ph{font-weight:600;font-size:14.5px;color:var(--forest);}
+  .flip-front .fn{font-size:12px;color:var(--forest-light);margin-top:4px;}
+  .flip-back{
+    background:var(--mustard);color:var(--ink);transform:rotateY(180deg);
+    font-size:13px;
+  }
+
+  /* sentence builder */
+  .builder{
+    background:var(--white);border:1px solid var(--sage-line);
+    border-radius:12px;padding:18px;
+  }
+  .chips-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .chip{
+    background:var(--sage);border:1px solid var(--sage-line);border-radius:20px;
+    padding:7px 14px;font-size:13.5px;cursor:pointer;font-weight:500;color:var(--forest);
+  }
+  .chip.active{background:var(--mustard);border-color:var(--mustard-dark);color:var(--ink);}
+  .chip-label{font-size:12px;color:var(--forest-light);font-weight:700;margin-top:14px;letter-spacing:.02em;}
+  .sentence-preview{
+    margin-top:16px;background:var(--sand);border:1.5px dashed var(--sage-line);
+    border-radius:10px;padding:16px;font-size:16px;font-style:italic;color:var(--ink);
+    min-height:30px;
+  }
+
+  /* roleplay cards */
+  .role-grid{display:flex;flex-direction:column;gap:14px;}
+  .role-card{
+    background:var(--white);border:1px solid var(--sage-line);border-radius:12px;
+    padding:18px;
+  }
+  .role-card .rtitle{font-weight:700;color:var(--forest);font-size:15px;margin-bottom:6px;}
+  .role-card .rdesc{font-size:14px;color:#4a4740;}
+  .role-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+  .role-tag{
+    font-size:11px;font-weight:700;background:var(--sage);color:var(--forest);
+    padding:3px 9px;border-radius:12px;text-transform:uppercase;letter-spacing:.03em;
+  }
+
+  /* spinner topics */
+  .topic-box{
+    background:var(--white);border:1px solid var(--sage-line);border-radius:12px;
+    padding:22px;text-align:center;
+  }
+  .topic-display{
+    font-family:'Fraunces',serif;font-size:22px;color:var(--forest);
+    min-height:60px;display:flex;align-items:center;justify-content:center;
+    padding:0 10px;
+  }
+
+  /* model presentation */
+  .script{
+    background:var(--sage);border-radius:12px;padding:20px;font-size:15px;
+    color:var(--ink);
+  }
+  .script p{margin:0 0 14px 0;}
+  .script p:last-child{margin-bottom:0;}
+  .script .signpost{color:var(--mustard-dark);font-weight:700;}
+
+  /* quiz */
+  .quiz-card{
+    background:var(--white);border:1px solid var(--sage-line);border-radius:12px;
+    padding:18px;margin-bottom:14px;
+  }
+  .quiz-q{font-weight:600;font-size:15px;margin-bottom:12px;}
+  .opt{
+    display:block;width:100%;text-align:left;background:var(--sand);
+    border:1.5px solid var(--sage-line);border-radius:8px;padding:11px 14px;
+    margin-bottom:8px;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;
+    color:var(--ink);
+  }
+  .opt.correct{background:#E4F0E1;border-color:var(--forest-light);color:var(--forest);}
+  .opt.wrong{background:#F5DFD8;border-color:var(--red);color:var(--red);}
+  .opt:disabled{cursor:default;}
+  .score-line{font-size:14px;font-weight:600;color:var(--forest);margin-top:6px;}
+
+  /* checklist */
+  .checklist{display:flex;flex-direction:column;gap:8px;}
+  .check-item{
+    display:flex;gap:10px;align-items:center;background:var(--white);
+    border:1px solid var(--sage-line);border-radius:8px;padding:10px 14px;font-size:14px;
+    cursor:pointer;
+  }
+  .check-item .box{
+    width:18px;height:18px;border-radius:5px;border:2px solid var(--sage-line);
+    flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    font-size:12px;color:var(--white);
+  }
+  .check-item.checked .box{background:var(--forest);border-color:var(--forest);}
+  .check-item.checked span.txt{color:#8a877e;text-decoration:line-through;}
+
+  .home-card{
+    background:var(--sage);border:1px solid var(--sage-line);color:var(--ink);border-radius:14px;padding:24px;
+  }
+  .home-card h2{color:var(--forest);}
+  .home-card p{color:var(--ink);font-size:15px;}
+
+  footer{
+    text-align:center;font-size:12px;color:#8a877e;margin-top:60px;
+  }
+  .site-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    max-width:720px;margin:0 auto;padding:14px 20px 0;font-size:13px;
+  }
+  .site-nav a{color:var(--forest-light);text-decoration:none;font-weight:600;}
+  .site-nav a:hover{color:var(--forest);}
+</style>
+</head>
+<body>
+
+<div class="site-nav">
+  <a href="../index.html">← Course home</a>
+  <a href="lesson-02.html">Lesson 2: Handling Q&amp;A →</a>
+</div>
+
+<div class="progress-shell">
+  <div class="progress-track"><div class="progress-fill" id="progFill"></div></div>
+  <div class="progress-label" id="progLabel">0% complete</div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">MODULE 3 · LESSON 1 · LEVEL B1</span>
+    <h1>Presentations: structure &amp; describing data</h1>
+    <p>Learn to open, structure and close a presentation — and describe charts and trends with confidence. Built for two: most activities are pair work.</p>
+    <div class="meta-row">
+      <div class="meta-chip">⏱ ~70 min</div>
+      <div class="meta-chip">🗣 Mostly speaking</div>
+      <div class="meta-chip">👥 Pair lesson</div>
+    </div>
+  </div>
+
+  <!-- WARM UP -->
+  <section id="s1">
+    <div class="section-head">
+      <div class="kicker">01 · WARM-UP</div>
+      <h2>Talk before you read</h2>
+      <p>Tap each question as you discuss it with your partner. No prep — just talk for 3–4 minutes per question.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING</div>
+    <div class="qlist" id="warmupList"></div>
+
+    <div class="timer-box">
+      <div class="time" id="warmupTime">05:00</div>
+      <div class="sub">Warm-up discussion timer</div>
+      <div class="timer-controls">
+        <button class="btn btn-mustard" onclick="startTimer('warmup',300)">Start</button>
+        <button class="btn btn-ghost" onclick="resetTimer('warmup',300)">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOCAB -->
+  <section id="s2">
+    <div class="section-head">
+      <div class="kicker">02 · LANGUAGE</div>
+      <h2>Presentation structure phrases</h2>
+      <p>Tap a card to flip it and see when to use it.</p>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </section>
+
+  <!-- SPEAKING DRILL: PHRASE RACE -->
+  <section id="s3">
+    <div class="section-head">
+      <div class="kicker">03 · SPEAKING DRILL</div>
+      <h2>Phrase race</h2>
+      <p>Partner A opens a random imaginary presentation using a structure phrase out loud. Partner B says which stage it is (opening / outlining / signposting / closing). Swap roles. Do this 8 times.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING · PAIR</div>
+    <div class="topic-box">
+      <div class="topic-display" id="phraseDisplay">Tap "New phrase" to start</div>
+      <button class="btn btn-mustard" style="margin-top:14px;" onclick="newPhrase()">New phrase →</button>
+    </div>
+  </section>
+
+  <!-- TRENDS -->
+  <section id="s4">
+    <div class="section-head">
+      <div class="kicker">04 · LANGUAGE</div>
+      <h2>Describing charts &amp; trends</h2>
+      <p>Build a sentence, say it out loud to your partner, then try describing it a different way.</p>
+    </div>
+    <div class="builder">
+      <div class="chip-label">SUBJECT</div>
+      <div class="chips-row" id="chipsSubject"></div>
+      <div class="chip-label">VERB</div>
+      <div class="chips-row" id="chipsVerb"></div>
+      <div class="chip-label">ADVERB</div>
+      <div class="chips-row" id="chipsAdverb"></div>
+      <div class="chip-label">TIME</div>
+      <div class="chips-row" id="chipsTime"></div>
+      <div class="sentence-preview" id="sentencePreview">Choose one chip from each row…</div>
+    </div>
+  </section>
+
+  <!-- SPEAKING: CHART DESCRIPTION -->
+  <section id="s5">
+    <div class="section-head">
+      <div class="kicker">05 · SPEAKING TASK</div>
+      <h2>Describe the trend aloud</h2>
+      <p>Partner A describes the data below out loud, month by month, without looking at notes. Partner B listens and ticks off which phrases they hear.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING · PAIR</div>
+    <div class="qcard" style="cursor:default;">
+      <span class="qnum">📊</span>
+      <span><b>Monthly sales ($1000s):</b> Jan 40 → Feb 42 → Mar 65 → Apr 63 → May 40</span>
+    </div>
+    <div class="chip-label">PARTNER B: TICK PHRASES YOU HEAR</div>
+    <div class="checklist" id="listenChecklist" style="margin-top:8px;"></div>
+  </section>
+
+  <!-- MODEL SCRIPT -->
+  <section id="s6">
+    <div class="section-head">
+      <div class="kicker">06 · MODEL</div>
+      <h2>Model mini-presentation</h2>
+      <p>Read this aloud together, one sentence each, alternating.</p>
+    </div>
+    <div class="script">
+      <p><span class="signpost">Good afternoon, everyone.</span> Today I'd like to talk about our sales performance last year.</p>
+      <p><span class="signpost">I've divided my presentation into three parts:</span> first, an overview of total sales; second, regional differences; and finally, our plans for next year.</p>
+      <p><span class="signpost">Let's start with the overview.</span> Sales grew steadily throughout the year, with a sharp increase in December.</p>
+      <p><span class="signpost">Moving on to regional performance</span> — the European market remained stable, while sales in Asia rose dramatically.</p>
+      <p><span class="signpost">To sum up,</span> it was a strong year overall. <span class="signpost">Are there any questions?</span></p>
+    </div>
+  </section>
+
+  <!-- ROLEPLAY -->
+  <section id="s7">
+    <div class="section-head">
+      <div class="kicker">07 · ROLEPLAY</div>
+      <h2>Presenter &amp; audience</h2>
+      <p>One of you is the Presenter, the other the Audience. Pick a card each and act it out — then swap.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING · ROLEPLAY</div>
+    <div class="role-grid" id="roleGrid"></div>
+  </section>
+
+  <!-- RAPID FIRE PRESENTATIONS -->
+  <section id="s8">
+    <div class="section-head">
+      <div class="kicker">08 · SPEAKING TASK</div>
+      <h2>2-minute mini presentations</h2>
+      <p>Tap "Pick a topic", then present for 2 minutes using at least 5 phrases from section 02. Your partner listens and fills in the peer checklist below. Do 2 rounds each.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING · TIMED</div>
+    <div class="topic-box">
+      <div class="topic-display" id="topicDisplay">Tap below to get a topic</div>
+      <button class="btn btn-mustard" style="margin-top:14px;" onclick="newTopic()">🎲 Pick a topic</button>
+    </div>
+    <div class="timer-box">
+      <div class="time" id="presTime">02:00</div>
+      <div class="sub">Presentation timer</div>
+      <div class="timer-controls">
+        <button class="btn btn-mustard" onclick="startTimer('pres',120)">Start</button>
+        <button class="btn btn-ghost" onclick="resetTimer('pres',120)">Reset</button>
+      </div>
+    </div>
+    <div class="chip-label" style="margin-top:22px;">PEER CHECKLIST (partner ticks while listening)</div>
+    <div class="checklist" id="peerChecklist" style="margin-top:8px;"></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="s9">
+    <div class="section-head">
+      <div class="kicker">09 · CHECK</div>
+      <h2>Quick check</h2>
+      <p>Quiet round — tap the correct answer.</p>
+    </div>
+    <div id="quizWrap"></div>
+    <div class="score-line" id="scoreLine"></div>
+  </section>
+
+  <!-- HOMEWORK -->
+  <section id="s10">
+    <div class="home-card">
+      <h2>🏠 Homework</h2>
+      <p>Write 80–100 words describing a trend — your income, a hobby you're tracking, or a made-up business scenario. Use at least 3 verbs of change and 2 adverbs from section 02.</p>
+      <p style="margin-top:14px;font-size:13px;opacity:.85;">Next lesson (2): Describing charts &amp; trends in depth + handling Q&amp;A live.</p>
+    </div>
+  </section>
+
+  <footer>Business English B1 · chillandspeak</footer>
+</div>
+
+<script>
+/* ---------- progress ---------- */
+const sectionIds = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10'];
+const doneSections = new Set();
+function markDone(id){
+  doneSections.add(id);
+  const pct = Math.round(doneSections.size/sectionIds.length*100);
+  document.getElementById('progFill').style.width = pct+'%';
+  document.getElementById('progLabel').textContent = pct+'% complete';
+}
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) markDone(e.target.id); });
+},{threshold:0.5});
+sectionIds.forEach(id=>{ const el=document.getElementById(id); if(el) obs.observe(el); });
+
+/* ---------- warm-up questions ---------- */
+const warmupQs = [
+  "Have you ever given a presentation at work? What was it about?",
+  "What makes a presentation good or bad, in your opinion?",
+  "Do you prefer slides, a whiteboard, or just talking?",
+  "What's the most nervous you've ever been before speaking in public?",
+  "If you had to present right now with zero prep, what topic could you talk about for 2 minutes?"
+];
+const warmupList = document.getElementById('warmupList');
+warmupQs.forEach((q,i)=>{
+  const d = document.createElement('div');
+  d.className='qcard';
+  d.innerHTML = `<span class="qnum">${i+1}</span><span>${q}</span>`;
+  d.onclick = ()=> d.classList.toggle('done');
+  warmupList.appendChild(d);
+});
+
+/* ---------- vocab flip cards ---------- */
+const vocab = [
+  {ph:"Today I'd like to talk about…", fn:"Introducing the topic", ex:"Use right after your greeting to state your subject."},
+  {ph:"I've divided my presentation into three parts", fn:"Outlining structure", ex:"Tells the audience what to expect and helps them follow along."},
+  {ph:"Let's start with… / Moving on to…", fn:"Signposting", ex:"Signals a transition between sections."},
+  {ph:"I'd like to draw your attention to…", fn:"Highlighting a point", ex:"Use before an important number, chart or fact."},
+  {ph:"To sum up… / In conclusion…", fn:"Closing", ex:"Signals you're wrapping up — audience refocuses."},
+  {ph:"Are there any questions?", fn:"Inviting Q&A", ex:"Standard closing line before discussion opens."}
+];
+const vocabGrid = document.getElementById('vocabGrid');
+vocab.forEach(v=>{
+  const d = document.createElement('div');
+  d.className='flip';
+  d.innerHTML = `
+    <div class="flip-inner">
+      <div class="flip-face flip-front"><div class="ph">"${v.ph}"</div><div class="fn">${v.fn}</div></div>
+      <div class="flip-face flip-back">${v.ex}</div>
+    </div>`;
+  d.onclick = ()=> d.classList.toggle('on');
+  vocabGrid.appendChild(d);
+});
+
+/* ---------- phrase race ---------- */
+const phraseBank = vocab.map(v=>v.ph);
+function newPhrase(){
+  const p = phraseBank[Math.floor(Math.random()*phraseBank.length)];
+  document.getElementById('phraseDisplay').textContent = '"'+p+'"';
+}
+
+/* ---------- timers ---------- */
+const timers = {};
+function fmt(s){ const m=Math.floor(s/60); const sec=s%60; return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0'); }
+function startTimer(key,total){
+  if(timers[key] && timers[key].interval) return;
+  if(!timers[key]) timers[key] = {remaining: total};
+  timers[key].interval = setInterval(()=>{
+    timers[key].remaining--;
+    const el = document.getElementById(key==='warmup'?'warmupTime':'presTime');
+    el.textContent = fmt(Math.max(timers[key].remaining,0));
+    if(timers[key].remaining<=0){
+      clearInterval(timers[key].interval);
+      timers[key].interval=null;
+    }
+  },1000);
+}
+function resetTimer(key,total){
+  if(timers[key] && timers[key].interval) clearInterval(timers[key].interval);
+  timers[key] = {remaining: total};
+  document.getElementById(key==='warmup'?'warmupTime':'presTime').textContent = fmt(total);
+}
+
+/* ---------- trend sentence builder ---------- */
+const subjects = ["Sales","Revenue","Profits","Customer numbers","Costs"];
+const verbs = ["rose","fell","remained stable","fluctuated","grew"];
+const adverbs = ["sharply","gradually","significantly","slightly","steadily"];
+const times = ["in the first quarter","throughout the year","in December","between March and June","last month"];
+const state = {subject:null,verb:null,adverb:null,time:null};
+function buildChips(containerId, list, key){
+  const el = document.getElementById(containerId);
+  list.forEach(item=>{
+    const c = document.createElement('div');
+    c.className='chip'; c.textContent=item;
+    c.onclick = ()=>{
+      [...el.children].forEach(ch=>ch.classList.remove('active'));
+      c.classList.add('active');
+      state[key]=item;
+      updateSentence();
+    };
+    el.appendChild(c);
+  });
+}
+buildChips('chipsSubject',subjects,'subject');
+buildChips('chipsVerb',verbs,'verb');
+buildChips('chipsAdverb',adverbs,'adverb');
+buildChips('chipsTime',times,'time');
+function updateSentence(){
+  const {subject,verb,adverb,time} = state;
+  if(subject&&verb&&adverb&&time){
+    document.getElementById('sentencePreview').textContent =
+      `"${subject} ${verb} ${adverb} ${time}."`;
+  }
+}
+
+/* ---------- listening checklist ---------- */
+const listenPhrases = ["rose","fell","remained stable","fluctuated","sharply","gradually / steadily"];
+function buildChecklist(containerId, items){
+  const el = document.getElementById(containerId);
+  items.forEach(txt=>{
+    const d = document.createElement('div');
+    d.className='check-item';
+    d.innerHTML = `<div class="box"></div><span class="txt">${txt}</span>`;
+    d.onclick = ()=>{
+      d.classList.toggle('checked');
+      d.querySelector('.box').textContent = d.classList.contains('checked') ? '✓' : '';
+    };
+    el.appendChild(d);
+  });
+}
+buildChecklist('listenChecklist', listenPhrases);
+
+/* ---------- roleplay cards ---------- */
+const roles = [
+  {t:"Presenter — Product launch", d:"You're launching a new app feature. Give a 90-second pitch: opening, 2 benefits, closing.", tags:["Opening","Closing"]},
+  {t:"Audience — Skeptical investor", d:"Ask 2 challenging questions about cost and timeline after the pitch.", tags:["Q&A"]},
+  {t:"Presenter — Quarterly results", d:"Present made-up sales numbers using trend language from section 04.", tags:["Data","Signposting"]},
+  {t:"Audience — Curious colleague", d:"Ask the presenter to clarify one number and repeat a point.", tags:["Clarifying"]}
+];
+const roleGrid = document.getElementById('roleGrid');
+roles.forEach(r=>{
+  const d = document.createElement('div');
+  d.className='role-card';
+  d.innerHTML = `<div class="rtitle">${r.t}</div><div class="rdesc">${r.d}</div>
+    <div class="role-tags">${r.tags.map(tg=>`<span class="role-tag">${tg}</span>`).join('')}</div>`;
+  roleGrid.appendChild(d);
+});
+
+/* ---------- rapid topics ---------- */
+const topics = [
+  "Your team's results this month",
+  "A product you'd like to introduce",
+  "Progress on a personal project",
+  "Why remote work does or doesn't work",
+  "A skill you're learning right now",
+  "Your ideal work schedule",
+  "A tool or app you can't work without",
+  "A recent decision you had to explain to someone"
+];
+function newTopic(){
+  const t = topics[Math.floor(Math.random()*topics.length)];
+  document.getElementById('topicDisplay').textContent = t;
+}
+buildChecklist('peerChecklist', [
+  "Used an opening phrase",
+  "Used a signposting phrase",
+  "Described at least one number/trend",
+  "Used a closing phrase",
+  "Spoke for close to 2 minutes"
+]);
+
+/* ---------- quiz ---------- */
+const quiz = [
+  {q:"Which phrase signals you are about to close?", opts:["Let's start with…","To sum up…","Moving on to…"], a:1},
+  {q:"\"Sales _____ sharply in Q1.\" — best verb?", opts:["remained stable","rose","fluctuated"], a:1},
+  {q:"Best phrase to invite questions?", opts:["I'd like to draw your attention to…","Are there any questions?","Today I'd like to talk about…"], a:1},
+  {q:"Which adverb describes a small, slow change?", opts:["dramatically","gradually","sharply"], a:1}
+];
+let score=0, answered=0;
+const quizWrap = document.getElementById('quizWrap');
+quiz.forEach((item,qi)=>{
+  const card = document.createElement('div');
+  card.className='quiz-card';
+  card.innerHTML = `<div class="quiz-q">${qi+1}. ${item.q}</div>`;
+  item.opts.forEach((opt,oi)=>{
+    const b = document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.onclick = ()=>{
+      const buttons = card.querySelectorAll('.opt');
+      buttons.forEach(bt=>bt.disabled=true);
+      if(oi===item.a){ b.classList.add('correct'); score++; }
+      else { b.classList.add('wrong'); buttons[item.a].classList.add('correct'); }
+      answered++;
+      document.getElementById('scoreLine').textContent = `Score: ${score} / ${quiz.length}`;
+    };
+    card.appendChild(b);
+  });
+  quizWrap.appendChild(card);
+});
+</script>
+</body>
+</html>

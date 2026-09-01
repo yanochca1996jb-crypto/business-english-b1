@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Business English B1 — Course</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#3A372F; --forest:#3E7A6C; --forest-light:#5B9686;
+    --mustard:#E8B85C; --mustard-dark:#C99B3F;
+    --sand:#FDFBF7; --sage:#EAF1EB; --sage-line:#CDDCD0; --white:#FFFFFF;
+  }
+  html{background:#FDFBF7;color-scheme:light;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--sand);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;}
+  h1,h2,h3{font-family:'Fraunces',serif;color:var(--forest);margin:0 0 .3em 0;font-weight:600;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px 90px;}
+  .hero{padding:56px 0 20px;}
+  .hero .tag{color:var(--mustard-dark);font-weight:700;font-size:13px;display:block;margin-bottom:10px;}
+  .hero h1{font-size:clamp(32px,6vw,46px);max-width:14ch;}
+  .hero p{font-size:16px;color:#5a564c;max-width:52ch;margin-top:12px;}
+
+  .module{margin-top:44px;}
+  .module-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;}
+  .module-num{
+    font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--white);
+    background:var(--forest);border-radius:20px;padding:3px 12px;flex-shrink:0;
+  }
+  .module-head h2{font-size:20px;margin:0;}
+
+  .lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media(max-width:560px){.lesson-grid{grid-template-columns:1fr;}}
+
+  .lesson-card{
+    display:flex;align-items:center;gap:12px;
+    background:var(--white);border:1px solid var(--sage-line);border-radius:10px;
+    padding:12px 14px;text-decoration:none;color:var(--ink);
+  }
+  .lesson-card.ready{border-color:var(--forest-light);}
+  .lesson-card .num{
+    font-family:'Fraunces',serif;font-weight:700;color:var(--forest-light);font-size:14px;flex-shrink:0;
+    width:22px;
+  }
+  .lesson-card .title{font-size:14px;font-weight:500;flex:1;}
+  .lesson-card .status{
+    font-size:11px;font-weight:700;padding:3px 8px;border-radius:12px;flex-shrink:0;
+  }
+  .lesson-card.ready .status{background:var(--sage);color:var(--forest);}
+  .lesson-card.soon{opacity:.55;cursor:default;}
+  .lesson-card.soon .status{background:#EFEDE6;color:#8a877e;}
+
+  footer{text-align:center;font-size:12px;color:#8a877e;margin-top:70px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">CHILLANDSPEAK · TUTORING</span>
+    <h1>Business English B1</h1>
+    <p>A full course for two students — 8 modules, 24 lessons, mostly speaking. Tap a ready lesson to open it; the rest are being added.</p>
+  </div>
+
+  <!-- MODULE 1 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">01</span><h2>Professional Correspondence</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card soon"><span class="num">1</span><span class="title">Formal vs informal emails</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">2</span><span class="title">Requests &amp; follow-ups</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">3</span><span class="title">Complaints &amp; apologies in writing</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <!-- MODULE 2 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">02</span><h2>Meetings &amp; Discussions</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card soon"><span class="num">4</span><span class="title">Leading a meeting</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">5</span><span class="title">Agreeing &amp; disagreeing diplomatically</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">6</span><span class="title">Action points &amp; follow-up</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <!-- MODULE 3 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">03</span><h2>Presentations &amp; Data</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card ready" href="lessons/lesson-01.html"><span class="num">7</span><span class="title">Structuring a presentation &amp; describing data</span><span class="status">Готово</span></a>
+      <a class="lesson-card ready" href="lessons/lesson-02.html"><span class="num">8</span><span class="title">Handling Q&amp;A after your presentation</span><span class="status">Готово</span></a>
+      <a class="lesson-card soon"><span class="num">9</span><span class="title">Advanced chart storytelling</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <!-- MODULE 4 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">04</span><h2>Negotiations &amp; Deals</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card soon"><span class="num">10</span><span class="title">Making offers &amp; counteroffers</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">11</span><span class="title">Reaching compromise</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">12</span><span class="title">Closing a deal</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <!-- MODULE 5 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">05</span><h2>Careers &amp; Recruitment</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card soon"><span class="num">13</span><span class="title">CVs &amp; cover letters</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">14</span><span class="title">Job interviews</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">15</span><span class="title">Talking about achievements</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <!-- MODULE 6 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">06</span><h2>Networking &amp; Socializing</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card soon"><span class="num">16</span><span class="title">Business events small talk</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">17</span><span class="title">Introductions &amp; follow-up contacts</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">18</span><span class="title">Business dinners &amp; etiquette</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <!-- MODULE 7 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">07</span><h2>Reports &amp; Documentation</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card soon"><span class="num">19</span><span class="title">Writing summaries &amp; reports</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">20</span><span class="title">Contracts &amp; formal requests</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">21</span><span class="title">Giving &amp; receiving feedback</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <!-- MODULE 8 -->
+  <div class="module">
+    <div class="module-head"><span class="module-num">08</span><h2>Cross-cultural Business</h2></div>
+    <div class="lesson-grid">
+      <a class="lesson-card soon"><span class="num">22</span><span class="title">Business travel English</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">23</span><span class="title">Cultural differences at work</span><span class="status">Скоро</span></a>
+      <a class="lesson-card soon"><span class="num">24</span><span class="title">Handling conflict professionally</span><span class="status">Скоро</span></a>
+    </div>
+  </div>
+
+  <footer>Business English B1 · chillandspeak</footer>
+</div>
+</body>
+</html>
