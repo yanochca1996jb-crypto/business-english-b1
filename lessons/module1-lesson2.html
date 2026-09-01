@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Lesson · Requests &amp; Follow-ups — Business English B1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --ink:#3A372F; --forest:#3E7A6C; --forest-light:#5B9686;
+    --mustard:#E8B85C; --mustard-dark:#C99B3F;
+    --sand:#FDFBF7; --sage:#EAF1EB; --sage-line:#CDDCD0; --white:#FFFFFF; --red:#C1604A;
+  }
+  html{background:#FDFBF7;color-scheme:light;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--sand);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  h1,h2,h3{font-family:'Fraunces',serif;color:var(--forest);margin:0 0 .4em 0;font-weight:600;line-height:1.15;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 80px;}
+
+  .site-nav{display:flex;justify-content:space-between;align-items:center;max-width:720px;margin:0 auto;padding:14px 20px 0;font-size:13px;}
+  .site-nav a{color:var(--forest-light);text-decoration:none;font-weight:600;}
+  .site-nav a:hover{color:var(--forest);}
+
+  .progress-shell{position:sticky;top:0;z-index:50;background:var(--sand);padding:14px 20px 10px;border-bottom:1px solid var(--sage-line);}
+  .progress-track{max-width:720px;margin:0 auto;height:6px;background:var(--sage);border-radius:4px;overflow:hidden;}
+  .progress-fill{height:100%;background:var(--mustard);width:0%;transition:width .5s ease;}
+  .progress-label{max-width:720px;margin:0 auto;font-size:12px;color:var(--forest-light);margin-top:6px;font-weight:600;}
+
+  .hero{padding:38px 0 8px;}
+  .hero .tag{color:var(--mustard-dark);font-weight:600;font-size:13px;margin-bottom:10px;display:block;}
+  .hero h1{font-size:clamp(30px,7vw,42px);max-width:13ch;}
+  .hero p{font-size:16px;color:#4a4740;max-width:46ch;margin-top:10px;}
+  .meta-row{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;}
+  .meta-chip{background:var(--white);border:1px solid var(--sage-line);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--forest);font-weight:500;}
+
+  section{margin-top:52px;}
+  .section-head{margin-bottom:18px;}
+  .section-head .kicker{font-size:13px;color:var(--mustard-dark);font-weight:700;margin-bottom:4px;}
+  .section-head h2{font-size:24px;}
+  .section-head p{color:#4a4740;font-size:15px;margin-top:6px;}
+  .speak-badge{display:inline-flex;align-items:center;gap:6px;background:var(--sage);color:var(--forest);border:1px solid var(--sage-line);font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:10px;}
+
+  .qlist{display:flex;flex-direction:column;gap:10px;}
+  .qcard{background:var(--white);border:1px solid var(--sage-line);border-radius:10px;padding:16px 18px;font-size:15px;display:flex;gap:12px;align-items:flex-start;cursor:pointer;}
+  .qnum{font-family:'Fraunces',serif;color:var(--mustard-dark);font-weight:700;font-size:16px;flex-shrink:0;}
+  .qcard.done{opacity:.5;text-decoration:line-through;}
+
+  .timer-box{background:var(--sage);border:1px solid var(--sage-line);color:var(--forest);border-radius:14px;padding:22px;text-align:center;margin-top:16px;}
+  .timer-box .time{font-family:'Fraunces',serif;font-size:52px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--forest);}
+  .timer-box .sub{font-size:13px;opacity:.75;margin-top:2px;color:var(--forest);}
+  .timer-controls{display:flex;gap:10px;justify-content:center;margin-top:14px;}
+  .btn{border:none;border-radius:8px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
+  .btn-mustard{background:var(--mustard);color:var(--ink);}
+  .btn-mustard:active{background:var(--mustard-dark);}
+  .btn-ghost{background:var(--white);color:var(--forest);border:1px solid var(--sage-line);}
+
+  .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:480px){.vocab-grid{grid-template-columns:1fr;}}
+  .flip{perspective:1000px;height:140px;cursor:pointer;}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+  .flip.on .flip-inner{transform:rotateY(180deg);}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:10px;padding:14px;display:flex;flex-direction:column;justify-content:center;}
+  .flip-front{background:var(--sage);border:1px solid var(--sage-line);}
+  .flip-front .ph{font-weight:600;font-size:13.5px;color:var(--forest);}
+  .flip-front .fn{font-size:11.5px;color:var(--forest-light);margin-top:6px;text-transform:uppercase;letter-spacing:.03em;font-weight:700;}
+  .flip-back{background:var(--mustard);color:var(--ink);transform:rotateY(180deg);font-size:13px;}
+
+  .role-grid{display:flex;flex-direction:column;gap:14px;}
+  .role-card{background:var(--white);border:1px solid var(--sage-line);border-radius:12px;padding:18px;}
+  .role-card .rtitle{font-weight:700;color:var(--forest);font-size:15px;margin-bottom:6px;}
+  .role-card .rdesc{font-size:14px;color:#4a4740;}
+  .role-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+  .role-tag{font-size:11px;font-weight:700;background:var(--sage);color:var(--forest);padding:3px 9px;border-radius:12px;text-transform:uppercase;letter-spacing:.03em;}
+
+  .topic-box{background:var(--white);border:1px solid var(--sage-line);border-radius:12px;padding:22px;text-align:center;}
+  .topic-display{font-family:'Fraunces',serif;font-size:19px;color:var(--forest);min-height:60px;display:flex;align-items:center;justify-content:center;padding:0 10px;}
+
+  .script{background:var(--sage);border-radius:12px;padding:20px;font-size:14.5px;color:var(--ink);}
+  .email-block{background:var(--white);border:1px solid var(--sage-line);border-radius:10px;padding:16px 18px;margin-bottom:14px;}
+  .email-block .elabel{font-size:11px;font-weight:700;color:var(--mustard-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;}
+  .email-block p{margin:0 0 8px 0;}
+  .email-block p:last-child{margin-bottom:0;}
+
+  .quiz-card{background:var(--white);border:1px solid var(--sage-line);border-radius:12px;padding:18px;margin-bottom:14px;}
+  .quiz-q{font-weight:600;font-size:15px;margin-bottom:12px;}
+  .opt{display:block;width:100%;text-align:left;background:var(--sand);border:1.5px solid var(--sage-line);border-radius:8px;padding:11px 14px;margin-bottom:8px;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;color:var(--ink);}
+  .opt.correct{background:#E4F0E1;border-color:var(--forest-light);color:var(--forest);}
+  .opt.wrong{background:#F5DFD8;border-color:var(--red);color:var(--red);}
+  .opt:disabled{cursor:default;}
+  .score-line{font-size:14px;font-weight:600;color:var(--forest);margin-top:6px;}
+
+  .checklist{display:flex;flex-direction:column;gap:8px;}
+  .check-item{display:flex;gap:10px;align-items:center;background:var(--white);border:1px solid var(--sage-line);border-radius:8px;padding:10px 14px;font-size:14px;cursor:pointer;}
+  .check-item .box{width:18px;height:18px;border-radius:5px;border:2px solid var(--sage-line);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--white);}
+  .check-item.checked .box{background:var(--forest);border-color:var(--forest);}
+  .check-item.checked span.txt{color:#8a877e;text-decoration:line-through;}
+
+  .home-card{background:var(--sage);border:1px solid var(--sage-line);color:var(--ink);border-radius:14px;padding:24px;}
+  .home-card h2{color:var(--forest);}
+  .home-card p{color:var(--ink);font-size:15px;}
+
+  footer{text-align:center;font-size:12px;color:#8a877e;margin-top:60px;}
+</style>
+</head>
+<body>
+
+<div class="site-nav">
+  <a href="module1-lesson1.html">← Lesson 1: Formal vs informal emails</a>
+  <a href="../index.html">Course home</a>
+</div>
+
+<div class="progress-shell">
+  <div class="progress-track"><div class="progress-fill" id="progFill"></div></div>
+  <div class="progress-label" id="progLabel">0% complete</div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">MODULE 1 · LESSON 2 · LEVEL B1</span>
+    <h1>Requests &amp; follow-ups</h1>
+    <p>Ask for things politely, chase people without sounding pushy, and agree on deadlines that actually stick.</p>
+    <div class="meta-row">
+      <div class="meta-chip">⏱ ~60 min</div>
+      <div class="meta-chip">🗣 Mostly speaking</div>
+      <div class="meta-chip">👥 Pair lesson</div>
+    </div>
+  </div>
+
+  <section id="s1">
+    <div class="section-head">
+      <div class="kicker">01 · WARM-UP</div>
+      <h2>Talk before you read</h2>
+      <p>Discuss with your partner, 3–4 minutes per question.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING</div>
+    <div class="qlist" id="warmupList"></div>
+    <div class="timer-box">
+      <div class="time" id="warmupTime">05:00</div>
+      <div class="sub">Warm-up discussion timer</div>
+      <div class="timer-controls">
+        <button class="btn btn-mustard" onclick="startTimer('warmup',300)">Start</button>
+        <button class="btn btn-ghost" onclick="resetTimer('warmup',300)">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="s2">
+    <div class="section-head">
+      <div class="kicker">02 · LANGUAGE</div>
+      <h2>Requests &amp; follow-up phrases</h2>
+      <p>Tap a card to flip it and see when to use it.</p>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </section>
+
+  <section id="s3">
+    <div class="section-head">
+      <div class="kicker">03 · SPEAKING DRILL</div>
+      <h2>Phrase race</h2>
+      <p>Partner A reads a random phrase aloud. Partner B says what it's used for (making a request / following up / adding urgency / agreeing a deadline). Swap after 8 rounds.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING · PAIR</div>
+    <div class="topic-box">
+      <div class="topic-display" id="phraseDisplay">Tap "New phrase" to start</div>
+      <button class="btn btn-mustard" style="margin-top:14px;" onclick="newPhrase()">New phrase →</button>
+    </div>
+  </section>
+
+  <section id="s4">
+    <div class="section-head">
+      <div class="kicker">04 · MODEL</div>
+      <h2>Request, then follow-up</h2>
+      <p>Read both aloud with your partner — one of you reads the first email, the other the follow-up three days later.</p>
+    </div>
+    <div class="email-block">
+      <div class="elabel">Monday — the request</div>
+      <p>Hi Daria,</p>
+      <p>I was wondering if you could send me the Q3 sales figures sometime this week — I need them for the client report.</p>
+      <p>Would it be possible to have them by Friday? Let me know if that timeline works for you.</p>
+      <p>Thanks in advance,<br>Oleh</p>
+    </div>
+    <div class="email-block">
+      <div class="elabel">Thursday — the follow-up</div>
+      <p>Hi Daria,</p>
+      <p>I'm just following up on my email from Monday about the Q3 sales figures. I know things get busy — just checking in on this.</p>
+      <p>This is quite time-sensitive, as the client report is due tomorrow. Would you be able to send them today?</p>
+      <p>Thanks so much,<br>Oleh</p>
+    </div>
+  </section>
+
+  <section id="s5">
+    <div class="section-head">
+      <div class="kicker">05 · ROLEPLAY</div>
+      <h2>Ask, then chase</h2>
+      <p>Partner A makes the request out loud. Partner B ignores it (on purpose!). Partner A then follows up using a phrase from section 02. Swap after each card.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING · ROLEPLAY</div>
+    <div class="role-grid" id="roleGrid"></div>
+  </section>
+
+  <section id="s6">
+    <div class="section-head">
+      <div class="kicker">06 · SPEAKING TASK</div>
+      <h2>Rapid-fire requests</h2>
+      <p>Tap "New situation", Partner A makes a polite request or follow-up out loud in under 20 seconds using at least one phrase from section 02. Partner B judges: natural or robotic? Do 8 rounds, then swap.</p>
+    </div>
+    <div class="speak-badge">🗣 SPEAKING · TIMED</div>
+    <div class="topic-box">
+      <div class="topic-display" id="lineDisplay">Tap below for a situation</div>
+      <button class="btn btn-mustard" style="margin-top:14px;" onclick="newLine()">🎲 New situation</button>
+    </div>
+    <div class="timer-box">
+      <div class="time" id="rapidTime">00:20</div>
+      <div class="sub">Answer timer</div>
+      <div class="timer-controls">
+        <button class="btn btn-mustard" onclick="startTimer('rapid',20)">Start</button>
+        <button class="btn btn-ghost" onclick="resetTimer('rapid',20)">Reset</button>
+      </div>
+    </div>
+    <div class="chip-label" style="margin-top:22px;font-size:12px;color:var(--forest-light);font-weight:700;">PARTNER B: DID THEY…</div>
+    <div class="checklist" id="peerChecklist" style="margin-top:8px;"></div>
+  </section>
+
+  <section id="s7">
+    <div class="section-head">
+      <div class="kicker">07 · CHECK</div>
+      <h2>Quick check</h2>
+      <p>Quiet round — tap the correct answer.</p>
+    </div>
+    <div id="quizWrap"></div>
+    <div class="score-line" id="scoreLine"></div>
+  </section>
+
+  <section id="s8">
+    <div class="home-card">
+      <h2>🏠 Homework</h2>
+      <p>Write a short email chain: an initial request (e.g. asking a colleague for a document or a favor) and a follow-up email sent a few days later, assuming you got no reply. Use at least 3 phrases from section 02.</p>
+      <p style="margin-top:14px;font-size:13px;opacity:.85;">Next lesson (Module 1, Lesson 3): Complaints &amp; apologies in writing.</p>
+    </div>
+  </section>
+
+  <footer>Business English B1 · chillandspeak</footer>
+</div>
+
+<script>
+const sectionIds = ['s1','s2','s3','s4','s5','s6','s7','s8'];
+const doneSections = new Set();
+function markDone(id){
+  doneSections.add(id);
+  const pct = Math.round(doneSections.size/sectionIds.length*100);
+  document.getElementById('progFill').style.width = pct+'%';
+  document.getElementById('progLabel').textContent = pct+'% complete';
+}
+const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) markDone(e.target.id);});},{threshold:0.5});
+sectionIds.forEach(id=>{const el=document.getElementById(id); if(el) obs.observe(el);});
+
+const warmupQs = [
+  "How do you usually ask a colleague for something — directly or politely softened?",
+  "Have you ever had to chase someone for a reply? How did you word it?",
+  "How many follow-ups is too many, in your opinion?",
+  "What's a deadline you agreed on recently, and how did you confirm it?"
+];
+const warmupList = document.getElementById('warmupList');
+warmupQs.forEach((q,i)=>{
+  const d = document.createElement('div'); d.className='qcard';
+  d.innerHTML = `<span class="qnum">${i+1}</span><span>${q}</span>`;
+  d.onclick = ()=> d.classList.toggle('done');
+  warmupList.appendChild(d);
+});
+
+const vocab = [
+  {ph:"I was wondering if you could…", fn:"Making a request", ex:"A softer, more polite way to ask for something than 'Can you…?'."},
+  {ph:"Would it be possible to…?", fn:"Making a request (very polite)", ex:"Use with people you don't know well, or higher up than you."},
+  {ph:"I'm just following up on my email from…", fn:"Following up (neutral)", ex:"The standard, professional way to nudge someone without sounding pushy."},
+  {ph:"Just checking in — any update on this?", fn:"Following up (casual)", ex:"Use with colleagues you know well, in a relaxed team culture."},
+  {ph:"This is quite time-sensitive, so I'd appreciate a quick response.", fn:"Adding urgency", ex:"Signals real urgency while staying polite — use when you genuinely need speed."},
+  {ph:"Does Friday work for you, or would you need more time?", fn:"Agreeing a deadline", ex:"Proposes a date while leaving room for the other person to push back."}
+];
+const vocabGrid = document.getElementById('vocabGrid');
+vocab.forEach(v=>{
+  const d = document.createElement('div'); d.className='flip';
+  d.innerHTML = `<div class="flip-inner"><div class="flip-face flip-front"><div class="ph">"${v.ph}"</div><div class="fn">${v.fn}</div></div><div class="flip-face flip-back">${v.ex}</div></div>`;
+  d.onclick = ()=> d.classList.toggle('on');
+  vocabGrid.appendChild(d);
+});
+
+const phraseBank = vocab.map(v=>v.ph);
+function newPhrase(){
+  const p = phraseBank[Math.floor(Math.random()*phraseBank.length)];
+  document.getElementById('phraseDisplay').textContent = '"'+p+'"';
+}
+
+const timers = {};
+function fmt(s){const m=Math.floor(s/60); const sec=s%60; return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');}
+function timerElId(key){ return key==='warmup' ? 'warmupTime' : 'rapidTime'; }
+function startTimer(key,total){
+  if(timers[key] && timers[key].interval) return;
+  if(!timers[key]) timers[key] = {remaining: total};
+  timers[key].interval = setInterval(()=>{
+    timers[key].remaining--;
+    document.getElementById(timerElId(key)).textContent = fmt(Math.max(timers[key].remaining,0));
+    if(timers[key].remaining<=0){ clearInterval(timers[key].interval); timers[key].interval=null; }
+  },1000);
+}
+function resetTimer(key,total){
+  if(timers[key] && timers[key].interval) clearInterval(timers[key].interval);
+  timers[key] = {remaining: total};
+  document.getElementById(timerElId(key)).textContent = fmt(total);
+}
+
+const roles = [
+  {t:"The first request", d:"Ask a colleague, politely, to send you last month's report by Friday.", tags:["Requesting"]},
+  {t:"The gentle follow-up", d:"Three days later, no reply — follow up without sounding annoyed.", tags:["Following up"]},
+  {t:"The urgent follow-up", d:"You need the report today for a client meeting — follow up and add urgency, but stay professional.", tags:["Urgency"]},
+  {t:"The third reminder", d:"This is your third message about the same request. How do you follow up without sounding rude?", tags:["Following up","Deadline"]}
+];
+const roleGrid = document.getElementById('roleGrid');
+roles.forEach(r=>{
+  const d = document.createElement('div'); d.className='role-card';
+  d.innerHTML = `<div class="rtitle">${r.t}</div><div class="rdesc">${r.d}</div><div class="role-tags">${r.tags.map(tg=>`<span class="role-tag">${tg}</span>`).join('')}</div>`;
+  roleGrid.appendChild(d);
+});
+
+const rapidLines = [
+  "Ask a colleague to review your document by tomorrow.",
+  "Follow up on a request you sent 4 days ago with no reply.",
+  "Ask your manager if a deadline can be moved back by two days.",
+  "Politely chase an invoice that a client still hasn't paid.",
+  "Ask a teammate to cover a task while you're on leave next week.",
+  "Follow up on a meeting request that was never confirmed.",
+  "Ask a supplier, urgently, to confirm a delivery date today.",
+  "Remind a colleague — for the third time — about a form you need signed."
+];
+function newLine(){
+  const l = rapidLines[Math.floor(Math.random()*rapidLines.length)];
+  document.getElementById('lineDisplay').textContent = l;
+}
+function buildChecklist(containerId, items){
+  const el = document.getElementById(containerId);
+  items.forEach(txt=>{
+    const d = document.createElement('div'); d.className='check-item';
+    d.innerHTML = `<div class="box"></div><span class="txt">${txt}</span>`;
+    d.onclick = ()=>{ d.classList.toggle('checked'); d.querySelector('.box').textContent = d.classList.contains('checked') ? '✓' : ''; };
+    el.appendChild(d);
+  });
+}
+buildChecklist('peerChecklist', [
+  "Used a phrase from section 02",
+  "Stayed polite, even when adding urgency",
+  "Answered within the time limit",
+  "Sounded natural, not memorized"
+]);
+
+const quiz = [
+  {q:"Most polite way to ask someone you don't know well?", opts:["Can you…?", "Would it be possible to…?", "I need you to…"], a:1},
+  {q:"Best phrase for a first, neutral follow-up?", opts:["I'm just following up on my email from…", "This is urgent, reply now.", "Would it be possible to…?"], a:0},
+  {q:"Best way to add urgency without sounding rude?", opts:["You need to do this immediately.", "This is quite time-sensitive, so I'd appreciate a quick response.", "Why haven't you replied yet?"], a:1},
+  {q:"Best way to propose a deadline while staying flexible?", opts:["I was wondering if you could…", "Does Friday work for you, or would you need more time?", "Just checking in — any update on this?"], a:1}
+];
+let score=0;
+const quizWrap = document.getElementById('quizWrap');
+quiz.forEach((item,qi)=>{
+  const card = document.createElement('div'); card.className='quiz-card';
+  card.innerHTML = `<div class="quiz-q">${qi+1}. ${item.q}</div>`;
+  item.opts.forEach((opt,oi)=>{
+    const b = document.createElement('button'); b.className='opt'; b.textContent=opt;
+    b.onclick = ()=>{
+      const buttons = card.querySelectorAll('.opt');
+      buttons.forEach(bt=>bt.disabled=true);
+      if(oi===item.a){ b.classList.add('correct'); score++; } else { b.classList.add('wrong'); buttons[item.a].classList.add('correct'); }
+      document.getElementById('scoreLine').textContent = `Score: ${score} / ${quiz.length}`;
+    };
+    card.appendChild(b);
+  });
+  quizWrap.appendChild(card);
+});
+</script>
+</body>
+</html>
