@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>Lesson · Complaints &amp; Apologies in Writing — Business English B1</title>
+<title>Revision · Module 1 — Business English B1</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -77,12 +77,6 @@
   .topic-box{background:var(--white);border:1px solid var(--sage-line);border-radius:12px;padding:22px;text-align:center;}
   .topic-display{font-family:'Fraunces',serif;font-size:19px;color:var(--forest);min-height:60px;display:flex;align-items:center;justify-content:center;padding:0 10px;}
 
-  .script{background:var(--sage);border-radius:12px;padding:20px;font-size:14.5px;color:var(--ink);}
-  .email-block{background:var(--white);border:1px solid var(--sage-line);border-radius:10px;padding:16px 18px;margin-bottom:14px;}
-  .email-block .elabel{font-size:11px;font-weight:700;color:var(--mustard-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;}
-  .email-block p{margin:0 0 8px 0;}
-  .email-block p:last-child{margin-bottom:0;}
-
   .quiz-card{background:var(--white);border:1px solid var(--sage-line);border-radius:12px;padding:18px;margin-bottom:14px;}
   .quiz-q{font-weight:600;font-size:15px;margin-bottom:12px;}
   .opt{display:block;width:100%;text-align:left;background:var(--sand);border:1.5px solid var(--sage-line);border-radius:8px;padding:11px 14px;margin-bottom:8px;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;color:var(--ink);}
@@ -107,8 +101,8 @@
 <body>
 
 <div class="site-nav">
-  <a href="module1-lesson2.html">← Lesson 2: Requests &amp; follow-ups</a>
-  <a href="module1-revision.html">Module 1 Revision →</a>
+  <a href="module1-lesson3.html">← Lesson 3: Complaints &amp; apologies</a>
+  <a href="module2-lesson1.html">Module 2: Leading a meeting →</a>
 </div>
 
 <div class="progress-shell">
@@ -119,11 +113,11 @@
 <div class="wrap">
 
   <div class="hero">
-    <span class="tag">MODULE 1 · LESSON 3 · LEVEL B1</span>
-    <h1>Complaints &amp; apologies in writing</h1>
-    <p>Raise a problem politely, apologize without admitting fault, and offer a solution that keeps the relationship intact.</p>
+    <span class="tag">MODULE 1 · REVISION · LEVEL B1</span>
+    <h1>Module 1 revision</h1>
+    <p>Pull together everything from emails, requests and complaints — mixed, timed, and put to the test.</p>
     <div class="meta-row">
-      <div class="meta-chip">⏱ ~60 min</div>
+      <div class="meta-chip">⏱ ~45 min</div>
       <div class="meta-chip">🗣 Mostly speaking</div>
       <div class="meta-chip">👥 Pair lesson</div>
     </div>
@@ -132,80 +126,45 @@
   <section id="s1">
     <div class="section-head">
       <div class="kicker">01 · WARM-UP</div>
-      <h2>Talk before you read</h2>
-      <p>Discuss with your partner, 3–4 minutes per question.</p>
+      <h2>Quick recall</h2>
+      <p>Discuss with your partner — no prep, just talk. These mix all three lessons on purpose.</p>
     </div>
     <div class="speak-badge">🗣 SPEAKING</div>
     <div class="qlist" id="warmupList"></div>
     <div class="timer-box">
-      <div class="time" id="warmupTime">05:00</div>
+      <div class="time" id="warmupTime">04:00</div>
       <div class="sub">Warm-up discussion timer</div>
       <div class="timer-controls">
-        <button class="btn btn-mustard" onclick="startTimer('warmup',300)">Start</button>
-        <button class="btn btn-ghost" onclick="resetTimer('warmup',300)">Reset</button>
+        <button class="btn btn-mustard" onclick="startTimer('warmup',240)">Start</button>
+        <button class="btn btn-ghost" onclick="resetTimer('warmup',240)">Reset</button>
       </div>
     </div>
   </section>
 
   <section id="s2">
     <div class="section-head">
-      <div class="kicker">02 · LANGUAGE</div>
-      <h2>Complaint &amp; apology phrases</h2>
-      <p>Tap a card to flip it and see when to use it.</p>
+      <div class="kicker">02 · MIXED VOCABULARY REVIEW</div>
+      <h2>Language from all three lessons</h2>
+      <p>Tap a card to flip it and see when to use it. Each card is tagged with the lesson it came from.</p>
     </div>
     <div class="vocab-grid" id="vocabGrid"></div>
   </section>
 
   <section id="s3">
     <div class="section-head">
-      <div class="kicker">03 · SPEAKING DRILL</div>
-      <h2>Phrase race</h2>
-      <p>Partner A reads a random phrase aloud. Partner B says what it's used for (making a complaint / apologizing / offering a solution / closing). Swap after 8 rounds.</p>
-    </div>
-    <div class="speak-badge">🗣 SPEAKING · PAIR</div>
-    <div class="topic-box">
-      <div class="topic-display" id="phraseDisplay">Tap "New phrase" to start</div>
-      <button class="btn btn-mustard" style="margin-top:14px;" onclick="newPhrase()">New phrase →</button>
-    </div>
-  </section>
-
-  <section id="s4">
-    <div class="section-head">
-      <div class="kicker">04 · MODEL</div>
-      <h2>Complaint, then response</h2>
-      <p>Read both aloud with your partner — one of you reads the complaint, the other the reply.</p>
-    </div>
-    <div class="email-block">
-      <div class="elabel">The complaint</div>
-      <p>Dear Customer Service,</p>
-      <p>I am writing to express my concern about the order I received yesterday (Order #4471). I was disappointed to find that two of the items were damaged, and the delivery itself arrived four days later than promised.</p>
-      <p>I would appreciate it if you could look into this matter and let me know how you plan to resolve it.</p>
-      <p>I trust this matter will be resolved promptly.<br>Kind regards,<br>Marta</p>
-    </div>
-    <div class="email-block">
-      <div class="elabel">The response</div>
-      <p>Dear Marta,</p>
-      <p>Thank you for bringing this to our attention. We sincerely apologize for any inconvenience this may have caused — we understand your frustration and take this matter seriously.</p>
-      <p>We are arranging a replacement for the damaged items, which will be dispatched today. As a gesture of goodwill, we would also like to offer you a 15% discount on your next order.</p>
-      <p>Please don't hesitate to contact us if there's anything else we can help with.<br>Best regards,<br>Customer Service Team</p>
-    </div>
-  </section>
-
-  <section id="s5">
-    <div class="section-head">
-      <div class="kicker">05 · ROLEPLAY</div>
-      <h2>Complain, then respond</h2>
-      <p>Partner A makes the complaint out loud. Partner B replies in role, apologizing and offering a solution using a phrase from section 02. Swap after each card.</p>
+      <div class="kicker">03 · SPEAKING ROLEPLAY</div>
+      <h2>Mix it up</h2>
+      <p>Each card needs language from more than one lesson. Pick a card, act it out with your partner, then swap.</p>
     </div>
     <div class="speak-badge">🗣 SPEAKING · ROLEPLAY</div>
     <div class="role-grid" id="roleGrid"></div>
   </section>
 
-  <section id="s6">
+  <section id="s4">
     <div class="section-head">
-      <div class="kicker">06 · SPEAKING TASK</div>
-      <h2>Rapid-fire complaints</h2>
-      <p>Tap "New situation", Partner A responds out loud in under 20 seconds using at least one phrase from section 02. Partner B judges: natural or robotic? Do 8 rounds, then swap.</p>
+      <div class="kicker">04 · SPEAKING TASK</div>
+      <h2>Rapid-fire mixed drill</h2>
+      <p>Tap "New situation", Partner A responds out loud in under 20 seconds using a phrase from any of the three lessons. Partner B judges: natural or robotic? Do 8 rounds, then swap.</p>
     </div>
     <div class="speak-badge">🗣 SPEAKING · TIMED</div>
     <div class="topic-box">
@@ -224,21 +183,22 @@
     <div class="checklist" id="peerChecklist" style="margin-top:8px;"></div>
   </section>
 
-  <section id="s7">
+  <section id="s5">
     <div class="section-head">
-      <div class="kicker">07 · CHECK</div>
-      <h2>Quick check</h2>
-      <p>Quiet round — tap the correct answer.</p>
+      <div class="kicker">05 · FINAL CHECK</div>
+      <h2>Module 1 quiz</h2>
+      <p>Quiet round — tap the correct answer. Covers all three lessons.</p>
     </div>
     <div id="quizWrap"></div>
     <div class="score-line" id="scoreLine"></div>
   </section>
 
-  <section id="s8">
+  <section id="s6">
     <div class="home-card">
-      <h2>🏠 Homework</h2>
-      <p>Write a short email chain: a polite complaint about a real or imagined problem (a late delivery, a billing error, poor service) and a reply that apologizes without admitting fault and offers a solution. Use at least 3 phrases from section 02.</p>
-      <p style="margin-top:14px;font-size:13px;opacity:.85;">Next lesson (Module 2, Lesson 1): Leading a meeting.</p>
+      <h2>✅ Self-check</h2>
+      <p>Tap what you can already do confidently. Anything unchecked is worth another look before Module 2.</p>
+      <div class="checklist" id="selfCheckList" style="margin-top:16px;"></div>
+      <p style="margin-top:16px;font-size:13px;opacity:.85;">Module 1 complete. Next up: Module 2 — Meetings &amp; Discussions.</p>
     </div>
   </section>
 
@@ -246,7 +206,7 @@
 </div>
 
 <script>
-const sectionIds = ['s1','s2','s3','s4','s5','s6','s7','s8'];
+const sectionIds = ['s1','s2','s3','s4','s5','s6'];
 const doneSections = new Set();
 function markDone(id){
   doneSections.add(id);
@@ -258,10 +218,10 @@ const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isInte
 sectionIds.forEach(id=>{const el=document.getElementById(id); if(el) obs.observe(el);});
 
 const warmupQs = [
-  "Have you ever written a complaint email? What was it about?",
-  "How do you feel when a company apologizes but doesn't really admit fault?",
-  "What makes an apology feel genuine versus scripted?",
-  "If a customer is angry, how much should a company offer to make it right?"
+  "Which of the three lessons — emails, requests, or complaints — do you find hardest, and why?",
+  "Tell your partner about a real email you've written that used one of these skills.",
+  "How would your tone change writing to a client versus a close colleague?",
+  "What's the difference between 'following up' and 'complaining'? Where's the line?"
 ];
 const warmupList = document.getElementById('warmupList');
 warmupQs.forEach((q,i)=>{
@@ -272,12 +232,15 @@ warmupQs.forEach((q,i)=>{
 });
 
 const vocab = [
-  {ph:"I am writing to express my concern about…", fn:"Opening a complaint", ex:"A polite, formal opener — softer than 'I have a complaint about'."},
-  {ph:"I was disappointed to find that…", fn:"Stating the problem", ex:"States dissatisfaction clearly without sounding aggressive."},
-  {ph:"We sincerely apologize for any inconvenience this may have caused.", fn:"Apologizing (no admission of fault)", ex:"A standard, neutral apology that doesn't confirm who was to blame."},
-  {ph:"We understand your frustration and take this matter seriously.", fn:"Acknowledging feelings", ex:"Shows empathy and takes the complaint seriously, without admitting liability."},
-  {ph:"As a gesture of goodwill, we would like to offer…", fn:"Offering compensation", ex:"Frames compensation as kindness, not as an admission of being at fault."},
-  {ph:"I trust this matter will be resolved promptly.", fn:"Closing a complaint", ex:"Signals you expect action, while staying polite and professional."}
+  {ph:"I would be grateful if you could…", fn:"Lesson 1 · Formal request", ex:"A polite, formal way to ask for something — softer than 'Could you…?'."},
+  {ph:"I look forward to hearing from you.", fn:"Lesson 1 · Formal closing", ex:"Standard closing line for a formal email, before the sign-off."},
+  {ph:"Talk soon!", fn:"Lesson 1 · Informal closing", ex:"A relaxed sign-off for colleagues you know well."},
+  {ph:"Would it be possible to…?", fn:"Lesson 2 · Very polite request", ex:"Use with people you don't know well, or higher up than you."},
+  {ph:"I'm just following up on my email from…", fn:"Lesson 2 · Following up", ex:"The standard, professional way to nudge someone without sounding pushy."},
+  {ph:"This is quite time-sensitive, so I'd appreciate a quick response.", fn:"Lesson 2 · Adding urgency", ex:"Signals real urgency while staying polite."},
+  {ph:"I am writing to express my concern about…", fn:"Lesson 3 · Opening a complaint", ex:"A polite, formal opener for a complaint email."},
+  {ph:"We sincerely apologize for any inconvenience this may have caused.", fn:"Lesson 3 · Apology (no fault admitted)", ex:"A neutral apology that doesn't confirm who was to blame."},
+  {ph:"As a gesture of goodwill, we would like to offer…", fn:"Lesson 3 · Offering compensation", ex:"Frames compensation as kindness, not as an admission of fault."}
 ];
 const vocabGrid = document.getElementById('vocabGrid');
 vocab.forEach(v=>{
@@ -287,11 +250,18 @@ vocab.forEach(v=>{
   vocabGrid.appendChild(d);
 });
 
-const phraseBank = vocab.map(v=>v.ph);
-function newPhrase(){
-  const p = phraseBank[Math.floor(Math.random()*phraseBank.length)];
-  document.getElementById('phraseDisplay').textContent = '"'+p+'"';
-}
+const roles = [
+  {t:"Informal ask, formal complaint", d:"Ask a colleague informally for a favor (Lesson 1). A week later, write a formal complaint (Lesson 3) because they never did it.", tags:["Lesson 1","Lesson 3"]},
+  {t:"The urgent, polite complaint", d:"Combine an urgency phrase (Lesson 2) with a polite complaint opener (Lesson 3) about a late order.", tags:["Lesson 2","Lesson 3"]},
+  {t:"Follow up, then apologize", d:"Partner A follows up on an unanswered request (Lesson 2). Partner B replies with an apology that doesn't admit fault (Lesson 3).", tags:["Lesson 2","Lesson 3"]},
+  {t:"Formal request, informal reply", d:"Partner A makes a very formal request (Lesson 1). Partner B replies informally, as a busy colleague would (Lesson 1).", tags:["Lesson 1"]}
+];
+const roleGrid = document.getElementById('roleGrid');
+roles.forEach(r=>{
+  const d = document.createElement('div'); d.className='role-card';
+  d.innerHTML = `<div class="rtitle">${r.t}</div><div class="rdesc">${r.d}</div><div class="role-tags">${r.tags.map(tg=>`<span class="role-tag">${tg}</span>`).join('')}</div>`;
+  roleGrid.appendChild(d);
+});
 
 const timers = {};
 function fmt(s){const m=Math.floor(s/60); const sec=s%60; return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');}
@@ -311,28 +281,15 @@ function resetTimer(key,total){
   document.getElementById(timerElId(key)).textContent = fmt(total);
 }
 
-const roles = [
-  {t:"The late delivery", d:"Complain about an order that arrived two weeks late.", tags:["Complaining"]},
-  {t:"The apology", d:"Respond to the late-delivery complaint — apologize without admitting the company was at fault.", tags:["Apologizing"]},
-  {t:"The compensation offer", d:"Offer a discount or partial refund as a goodwill gesture for a customer's bad experience.", tags:["Solution"]},
-  {t:"The second complaint", d:"Handle a customer's second email about the same issue — still polite, but firmer.", tags:["Complaining","Closing"]}
-];
-const roleGrid = document.getElementById('roleGrid');
-roles.forEach(r=>{
-  const d = document.createElement('div'); d.className='role-card';
-  d.innerHTML = `<div class="rtitle">${r.t}</div><div class="rdesc">${r.d}</div><div class="role-tags">${r.tags.map(tg=>`<span class="role-tag">${tg}</span>`).join('')}</div>`;
-  roleGrid.appendChild(d);
-});
-
 const rapidLines = [
-  "Complain about a product that arrived broken.",
-  "Apologize for a delayed shipment without admitting fault.",
-  "Offer a partial refund as a goodwill gesture.",
-  "Complain about being overcharged on an invoice.",
-  "Apologize for a mistake in a report you sent a client.",
-  "Offer to redo a piece of work for free as compensation.",
-  "Complain, politely, about poor service at a recent meeting.",
-  "Reply calmly to an angry customer email."
+  "Ask a colleague informally to cover your shift tomorrow.",
+  "Follow up on a request you sent 4 days ago with no reply.",
+  "Complain, politely, about an invoice that overcharged you.",
+  "Apologize for a late delivery without admitting your company was at fault.",
+  "Add urgency to a request without sounding rude.",
+  "Offer a discount as a goodwill gesture after a complaint.",
+  "Close a formal email to a new client.",
+  "Ask a teammate, formally, to send a report by Friday."
 ];
 function newLine(){
   const l = rapidLines[Math.floor(Math.random()*rapidLines.length)];
@@ -348,17 +305,21 @@ function buildChecklist(containerId, items){
   });
 }
 buildChecklist('peerChecklist', [
-  "Used a phrase from section 02",
-  "Stayed calm and professional",
+  "Used a phrase from any of the three lessons",
+  "Used the right register (formal/informal) for the situation",
   "Answered within the time limit",
   "Sounded natural, not memorized"
 ]);
 
 const quiz = [
+  {q:"Most formal way to make a request?", opts:["Can you…?", "I would be grateful if you could…", "Would it be possible to…?"], a:1},
+  {q:"Best informal closing line?", opts:["I look forward to hearing from you.", "Talk soon!", "Kind regards."], a:1},
+  {q:"Best phrase for a first, neutral follow-up?", opts:["I'm just following up on my email from…", "This is urgent, reply now.", "Would it be possible to…?"], a:0},
+  {q:"Best way to add urgency without sounding rude?", opts:["You need to do this immediately.", "This is quite time-sensitive, so I'd appreciate a quick response.", "Why haven't you replied yet?"], a:1},
   {q:"Best way to open a formal complaint?", opts:["I am writing to express my concern about…", "This is completely unacceptable.", "We sincerely apologize."], a:0},
   {q:"Best apology that doesn't admit fault?", opts:["It was our mistake entirely.", "We sincerely apologize for any inconvenience this may have caused.", "I trust this will be resolved."], a:1},
   {q:"Best phrase for offering compensation?", opts:["As a gesture of goodwill, we would like to offer…", "I was disappointed to find that…", "We take this matter seriously."], a:0},
-  {q:"Best way to close a complaint email?", opts:["I trust this matter will be resolved promptly.", "We understand your frustration.", "I am writing to express my concern."], a:0}
+  {q:"Which phrase would you NOT use in a formal client email?", opts:["I would be grateful if you could…", "Talk soon!", "I am writing to express my concern about…"], a:1}
 ];
 let score=0;
 const quizWrap = document.getElementById('quizWrap');
@@ -377,6 +338,15 @@ quiz.forEach((item,qi)=>{
   });
   quizWrap.appendChild(card);
 });
+
+buildChecklist('selfCheckList', [
+  "I can write both a formal and an informal email about the same topic",
+  "I can make a polite request and follow up without sounding pushy",
+  "I can add urgency to a message while staying professional",
+  "I can write a polite complaint email",
+  "I can apologize professionally without admitting fault",
+  "I can offer a solution or compensation to resolve a complaint"
+]);
 </script>
 </body>
 </html>
